@@ -1,0 +1,85 @@
+~<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Giới thiệu sản phẩm</h2>
+
+    <!-- SVG LOGO -->
+    <svg width="100" height="100">
+      <circle cx="50" cy="50" r="40" fill="blue" />
+    </svg>
+    <p>Logo thương hiệu</p>
+
+    <!-- 3 ẢNH SẢN PHẨM -->
+    <figure>
+      <img
+        src="./iphone1.png"
+        alt="iPhone 16 Pro Max màu titan"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
+      <figcaption>iPhone 16 Pro Max - Thiết kế sang trọng</figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="./iphone2.png"
+        alt="iPhone 17 Pro Max màu cam"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
+      <figcaption>Camera nâng cấp mạnh mẽ</figcaption>
+    </figure>
+
+    <figure>
+      <img
+        src="./iphone3.png"
+        alt="iPhone xs Max màu vàng"
+        loading="lazy"
+        style="max-width: 100%; height: auto"
+      />
+      <figcaption>iPhone xs Max | Giá rẻ hiệu năng ổn định</figcaption>
+    </figure>
+
+    <!-- VIDEO YOUTUBE -->
+    <h3>Video giới thiệu (YouTube)</h3>
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/VoBBKzE1O1s?si=QdJo-5nu2AIEFVz9"
+      title="YouTube video player"
+      frameborder="0"
+      allow="
+        accelerometer;
+        autoplay;
+        clipboard-write;
+        encrypted-media;
+        gyroscope;
+        picture-in-picture;
+        web-share;
+      "
+      referrerpolicy="strict-origin-when-cross-origin"
+      allowfullscreen
+    ></iframe>
+
+    <!-- VIDEO LOCAL -->
+    <h3>Video sản phẩm (local)</h3>
+    <video controls poster="poster.jpg" style="max-width: 100%; height: auto">
+      <source src="video.mp4" type="video/mp4" />
+      <source src="video.webm" type="video/webm" />
+      Trình duyệt của bạn không hỗ trợ video.
+    </video>
+
+    <!-- AUDIO -->
+    <h3>Nhạc nền giới thiệu</h3>
+    <audio controls>
+      <source src="audio.mp3" type="audio/mpeg" />
+      <source src="audio.ogg" type="audio/ogg" />
+      Trình duyệt không hỗ trợ audio.
+    </audio>
+  </body>
+</html>
