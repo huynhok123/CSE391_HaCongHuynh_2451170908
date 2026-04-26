@@ -108,27 +108,89 @@ Câu A4 (5đ) — Media
 
 Câu A5 (5đ) — So sánh <figure> vs <img>
 
-Dùng cách 1 khi:
-+Ảnh đứng một mình, không cần chú thích hiển thị
-+Thông tin đã đủ trong alt hoặc context xung quanh
-Ví dụ:
-1
-<img src="iphone.jpg" alt="iPhone 16 Pro Max màu titan">
-2
-<img src="logo.png" alt="Apple">
+    Dùng cách 1 khi:
+    +Ảnh đứng một mình, không cần chú thích hiển thị
+    +Thông tin đã đủ trong alt hoặc context xung quanh
+    Ví dụ:
+    1
+    <img src="iphone.jpg" alt="iPhone 16 Pro Max màu titan">
+    2
+    <img src="logo.png" alt="Apple">
 
-Dùng cách 2 khi:
-+Ảnh cần giải thích thêm / có caption hiển thị
-+Caption là một phần nội dung quan trọng
-Ví dụ:
-1
+    Dùng cách 2 khi:
+    +Ảnh cần giải thích thêm / có caption hiển thị
+    +Caption là một phần nội dung quan trọng
+    Ví dụ:
+    1
 
-<figure>
-  <img src="iphone.jpg" alt="iPhone 16 Pro Max 256GB Titan">
-  <figcaption>iPhone 16 Pro Max — 25.990.000đ</figcaption>
-</figure>
-2
-<figure>
-  <img src="chart.png" alt="Biểu đồ doanh thu Q1 2026">
-  <figcaption>Doanh thu tăng 30% so với quý trước</figcaption>
-</figure>
+    <figure>
+    <img src="iphone.jpg" alt="iPhone 16 Pro Max 256GB Titan">
+    <figcaption>iPhone 16 Pro Max — 25.990.000đ</figcaption>
+    </figure>
+    2
+    <figure>
+    <img src="chart.png" alt="Biểu đồ doanh thu Q1 2026">
+    <figcaption>Doanh thu tăng 30% so với quý trước</figcaption>
+    </figure>
+
+Câu C1 (10đ) — Debug Form
+
+    Lỗi 1: Dòng 2 — Input "Tên" không có <label for="..."> → vi phạm accessibility
+    Sửa: <label for="name">Tên:</label>
+    <input type="text" id="name" name="name" required>
+
+    Lỗi 2: Dòng 4 — Input email không có <label>
+    Sửa: <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required placeholder="Email của bạn">
+
+    Lỗi 3: Dòng 6–7 — Password không có label + không có validation
+    Sửa: <label for="password">Mật khẩu:</label>
+    <input type="password" id="password" name="password" required minlength="8">
+
+    <label for="confirm">Nhập lại mật khẩu:</label>
+    <input type="password" id="confirm" name="confirm" required minlength="8">
+
+    Lỗi 4: Dòng 9 — Phone dùng type="text" thay vì type="tel"
+    Sửa: <label for="phone">Số điện thoại:</label>
+    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="0901234567">
+
+    Lỗi 5: Dòng 9 — Dùng value mặc định → không nên (best practice UX)
+    Sửa: dùng placeholder thay vì value
+
+    Lỗi 6: Dòng 11 — <select> không có <label>
+    Sửa: <label for="city">Thành phố:</label>
+    <select id="city" name="city" required>
+
+    Lỗi 7: Dòng 15 — Checkbox không có <input> bên trong label
+    Sửa: <label>
+    <input type="checkbox" name="agree" required>
+    Tôi đồng ý điều khoản
+    </label>
+
+    Lỗi 8: Dòng 18 — Dùng <input type="submit"> thay vì <button> (best practice)
+    Sửa: <button type="submit">Gửi</button>
+
+Câu C2 (10đ) — Thiết kế chiến lược Validation
+
+1. Viết pattern regex cho CMND/CCCD và Số tài khoản
+   CMND/CCCD
+   pattern="[0-9]{12}"
+   Số tài khoản (10–15 chữ số)
+   pattern="[0-9]{10,15}"
+
+2. Giải thích: HTML5 validation đủ an toàn cho ứng dụng ngân hàng chưa? Tại sao?
+   Validation KHÔNG đủ an toàn.
+   Vì validation chỉ chạy ở frontend (trình duyệt)
+   Nên người dùng có thể: Tắt validation (novalidate) > Sửa HTML bằng DevTools > Gửi request trực tiếp qua API (Postman, curl) => không đáng tin
+
+3. Liệt kê 3 loại validation mà HTML5 KHÔNG THỂ làm được (phải dùng JavaScript)
+   3 loại đó là:
+   +mã PIN
+   +kiểm tra email đã tồn tại trong hệ thống hay chưa
+   +kiểm tra mã OTP có đúng không theo thời gian thực
+
+4. Nêu 2 rủi ro bảo mật nếu chỉ validate trên Frontend mà không validate Backend
+   1. Hacker có thể gửi request trực tiếp = lệnh
+      curl -X POST /api/register ...
+   2. Injection attack
+      Nếu backend không validate thì dữ liệu có thể bị lộ và bị chiếm quyền tài khoản
