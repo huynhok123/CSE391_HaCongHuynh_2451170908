@@ -17,7 +17,7 @@ Câu A1 (5đ) — HTTP & Browser
 
 Câu A2 (5đ) — Semantic HTML
 
-Đọc chương 04, trả lời: Tại sao trang web dưới đây bị Google đánh giá SEO thấp? Liệt kê ít nhất 4 lỗi semantic và sửa lại.
+Đọc chương 04, trả lời: Tại sao trang web dưới đây bị Google đánh giá SEO thấp? Liệt kê ít nhất 4 à sửa lại.
 
     Tại vì khi công cụ tìm kiếm quét qua web này sẽ không hiểu đâu là đầu trang, tranh chính và chân trang vì dùng toàn thẻ không có ngữ nghĩa nên vì thế sẽ bị đánh giá SEO thấp và tụt hạng tìm kiếm.
 
@@ -64,3 +64,25 @@ Câu A4 (5đ) — Table
     1. Khó tương thích với thiết bị di động.
     2. Khó code bảo trì kém vì nó liên quan đến tổng thể cả trang web.
     3. Phá vỡ ngữ nghĩa làm tụt điểm SEO.
+
+Bài B3 (15đ) — Debug HTML
+
+Lỗi 1: Dòng 1 — Thẻ <!DOCTYPE> không đầy đủ — Thay bằng <!DOCTYPE html>.
+
+Lỗi 2: Dòng 2 — Thẻ <title> thiếu thẻ đóng </title> — Thêm </title> sau nội dung tiêu đề.
+
+Lỗi 3: Dòng 3 — Giá trị utf8 trong meta charset không đúng chuẩn SEO/Browser — Thay bằng UTF-8.
+
+Lỗi 4: Dòng 4 — Sai thẻ đóng <h1> (đang viết là thẻ mở) — Thay <h1> ở cuối câu thành </h1>.
+
+Lỗi 5: Dòng 8 — Sai thẻ đóng <a> (đang viết là thẻ mở) — Thay <a> thành </a>.
+
+Lỗi 6: Dòng 15 — Thuộc tính src thiếu dấu ngoặc kép và thiếu thuộc tính alt (quan trọng cho SEO) — Viết src="iphone.jpg" và thêm alt="mô tả ảnh".
+
+Lỗi 7: Dòng 17 — Thẻ <b> nằm ngoài thẻ đóng </p> — Đóng thẻ </b> trước khi đóng </p>.
+
+Lỗi 8: Dòng 21-23 — Dùng thẻ <td> cho tiêu đề bảng và thiếu cấu trúc <thead> — Thay <td> thành <th> và bọc hàng tiêu đề trong thẻ <thead>.
+
+Lỗi 9: Dòng 32 — Dùng thẻ <main> 2 lần — Thay thẻ <main> thứ hai thành thẻ <aside>.
+
+Lỗi 10: Dòng 37 — Thẻ <p> trong <footer> thiếu thẻ đóng — Thêm </p> vào cuối dòng.
