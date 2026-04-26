@@ -102,3 +102,23 @@ Bài B4 (15đ) — Phân tích trang web thật
     action mặc đinh là gủi request đến chính URL hiện tại.
 
     Thẻ <input> cũng không khai báo thuộc tính nên trình duyệt sẽ tự động cài theo mặc đinh là type="text".
+
+Câu C2 (10đ) — So sánh & Tranh luận
+Quan điểm “dùng <div> cho mọi thứ” nghe có vẻ nhanh, nhưng về lâu dài là thiệt hại kỹ thuật rõ ràng.
+
+Thứ nhất là SEO. Công cụ tìm kiếm như Google không chỉ đọc text mà còn phân tích cấu trúc HTML. Khi bạn dùng <header>, <nav>, <main>, <article>, nội dung được phân loại rõ ràng → bot hiểu đâu là nội dung chính, đâu là menu, đâu là bài viết. Nếu tất cả đều là <div>, bạn buộc phải “đoán” bằng class, và bot không phải lúc nào cũng hiểu đúng → ảnh hưởng ranking.
+
+Thứ hai là khả năng truy cập. Các trình đọc màn hình như NVDA dựa vào semantic HTML để giúp người khiếm thị điều hướng nhanh (ví dụ nhảy thẳng tới <main> hoặc danh sách <nav>). Nếu dùng toàn <div>, người dùng phải nghe từng dòng vô nghĩa → trải nghiệm cực tệ.
+
+Ví dụ cụ thể: breadcrumb.
+
+<nav aria-label="breadcrumb">
+  <ol>
+    <li><a href="/">Home</a></li>
+    <li>Product</li>
+  </ol>
+</nav>
+
+Ở đây <nav> + aria-label giúp screen reader hiểu ngay đây là điều hướng, còn <ol> thể hiện thứ tự cấp bậc. Nếu thay bằng <div>, bạn mất toàn bộ ý nghĩa này.
+
+Tuy vậy, <div> không vô dụng. Nó phù hợp khi chỉ cần layout hoặc grouping thuần túy, ví dụ wrapper cho Flex/Grid, hoặc container styling mà không mang ý nghĩa nội dung.
