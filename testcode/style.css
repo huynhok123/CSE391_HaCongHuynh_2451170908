@@ -1,0 +1,19 @@
+.boxa {
+  width: 300px;
+  height: 300px;
+  background-color: #b56666;
+  margin-top: -40px;
+}
+
+p {
+  color: black;
+} /* Rule A */
+.price {
+  color: blue;
+} /* Rule B */
+#main-price {
+  color: red;
+} /* Rule C */
+p.price {
+  color: green;
+} /* Rule D */
