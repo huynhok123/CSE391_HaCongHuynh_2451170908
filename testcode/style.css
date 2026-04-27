@@ -1,19 +1,22 @@
-.boxa {
-  width: 300px;
-  height: 300px;
-  background-color: #b56666;
-  margin-top: -40px;
+body {
+  font-size: 16px;
+  color: #333;
 }
-
-p {
-  color: black;
-} /* Rule A */
-.price {
+.container {
+  font-size: 14px;
+}
+.card {
   color: blue;
-} /* Rule B */
-#main-price {
+}
+.card .title {
+  font-size: 20px;
+}
+.card p {
+  color: inherit;
+}
+#featured .title {
   color: red;
-} /* Rule C */
-p.price {
-  color: green;
-} /* Rule D */
+}
+.highlight {
+  color: green !important;
+}

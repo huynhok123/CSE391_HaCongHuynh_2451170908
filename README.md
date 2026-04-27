@@ -2,7 +2,7 @@
 
 Phiếu 1: Hoàn thành phần A, B, C
 Phiếu 2: Hoàn thành phần A, B, C
-Phiếu 3: Hoàn thành phần A
+Phiếu 3: Hoàn thành phần A, B, C
 Phiếu 4:
 Phiếu 5:
 Phiếu 6:

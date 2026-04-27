@@ -141,3 +141,35 @@ Bài B3 (15đ) — Specificity Battle
     Thay đổi thứ tự rules có ảnh hưởng không?
 
     Không thay đổi vì thằng màu **gold** có specificity cao  rồi khi có level = nhau thì thay đổi thứ tự mới có thay đổi
+
+Câu C1 (10đ) — Debug CSS Layout
+
+    Tính chiều rộng thực tế của sidebar và content (content-box!)
+        Sidebar = 342px
+        Content = 722px
+
+    Giải thích tại sao layout bị vỡ
+        Vì dùng thuộc tính box-sizing mặc định nên width không bao gồm padding và border nên tổng width thực tế lớn hơn container
+
+Câu C2 (10đ) — Cascade Puzzle
+
+    "Sản phẩm A" (h2) có font-size = ? và color = ?
+        font-size = 20px
+        .card .title: 20px ← áp dụng trực tiếp
+        color = green
+        có !important > tất cả nên có màu green
+
+    "Mô tả sản phẩm" (p trong card featured) có color = ?
+         color = blue
+         p → color: inherit nên lấy màu từ cha nó
+
+    "Sản phẩm B" (h2) có font-size = ? và color = ?
+        font-size = 20px
+        .card .title → 20px
+        color = blue
+        .card { color: blue; } thì sẽ có màu blue
+
+    "Mô tả sản phẩm B" (p.highlight) có color = ?
+        color = green
+        .highlight { color: green !important; }
+        có !important > tất cả nên có màu green
