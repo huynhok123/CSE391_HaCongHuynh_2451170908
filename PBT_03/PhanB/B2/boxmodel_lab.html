@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="boxmodel.css" />
+  </head>
+  <body>
+    <h2>PHẦN 1 — content-box vs border-box</h2>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <h2>PHẦN 2 — Layout 3 cột</h2>
+    <div class="container no-border-box">
+      <div class="sidebar">Sidebar (250px + padding)</div>
+      <div class="content">Content (500px + padding)</div>
+      <div class="ads">Ads (250px + padding)</div>
+    </div>
+
+    <br />
+
+    <div class="container use-border-box">
+      <div class="sidebar">Sidebar (250px)</div>
+      <div class="content">Content (500px)</div>
+      <div class="ads">Ads (250px)</div>
+    </div>
+  </body>
+</html>

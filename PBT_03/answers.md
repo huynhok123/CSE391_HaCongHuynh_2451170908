@@ -107,3 +107,37 @@ Câu A4 (5đ) — Specificity (Độ ưu tiên)
     Element sẽ có màu đen
 
     Vì từ khoá !important sẽ đứng trên tất cả qui tắc so sánh
+
+Bài B2 (20đ) — Box Model Lab
+
+    Phần 1:
+    Hộp 1 (content-box): Chiều rộng thực tế = 350px
+    (300 content + 20*2 padding + 5*2 border)
+
+    Hộp 2 (border-box): Chiều rộng thực tế = 300px
+    (width đã bao gồm padding + border)
+
+    Giải thích:
+    - content-box: width chỉ tính content → padding + border cộng thêm bên ngoài
+    - border-box: width bao gồm cả content + padding + border → tổng không đổi
+
+Bài B3 (15đ) — Specificity Battle
+
+    1. p → (0,0,1)
+    2. .text → (0,1,0)
+    3. .highlight → (0,1,0)
+    4. p.text → (0,1,1)
+    5. p.highlight → (0,1,1)
+    6. .text.highlight → (0,2,0)
+    7. #demo → (1,0,0)
+    8. #demo.text → (1,1,0)
+    9. #demo.highlight → (1,1,0)
+    10. #demo.text.highlight → (1,2,0)
+
+    Element cuối cùng có màu: **gold**
+
+    Vì nó có specificity cao nhất (1,2,0) nên đè lên toàn bộ
+
+    Thay đổi thứ tự rules có ảnh hưởng không?
+
+    Không thay đổi vì thằng màu **gold** có specificity cao  rồi khi có level = nhau thì thay đổi thứ tự mới có thay đổi

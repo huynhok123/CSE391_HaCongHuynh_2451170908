@@ -1,8 +1,8 @@
 # CSE391_HaCongHuynh_2451170908
 
 Phiếu 1: Hoàn thành phần A, B, C
-Phiếu 2:
-Phiếu 3:
+Phiếu 2: Hoàn thành phần A, B, C
+Phiếu 3: Hoàn thành phần A
 Phiếu 4:
 Phiếu 5:
 Phiếu 6:
