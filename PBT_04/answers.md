@@ -51,3 +51,37 @@ Câu A2 (10đ) — Flexbox vs Grid
     | item1 | item2 | item3 |
     | item4 | item5 | item6 |
     | item7 |       |       |
+
+Câu C1 (10đ) — Flexbox vs Grid: Khi nào dùng gì?
+
+    1. Navigation bar ngang (logo + menu + buttons)
+    Dùng: Flexbox
+    Vì: 1 chiều dễ dùng và căn chỉnh chỉ cần căn trái giữa phải
+
+    2. Lưới ảnh Instagram (3 cột đều, số ảnh không biết trước)
+    Dùng: Grid
+    Vì: nhiều chiều và tự xuống dòng khi thêm ảnh
+
+    3. Layout blog (main content + sidebar)
+    Dùng: Grid
+    Vì: Chia layout tổng thể thành 2 cột
+
+    4. Footer với 4 cột thông tin
+    Dùng: Grid
+    Vì: Nhiều cột song song,Cần đều nhau và rõ ràng
+
+    5. Card sản phẩm (ảnh – text – nút dính đáy)
+    Dùng: Flexbox
+    Vì: 1 chiều,Cần đẩy nút xuống đáy
+
+Câu C2 (10đ) — Debug Flexbox
+
+    Lỗi 1: Cards không đều chiều cao — nút "Mua" bị nhảy lên/xuống
+        Nút mua chưa được đẩy xuống đáy nên nó sẽ sát nội dung ở trên,và các khối không được cài đặt kích thước nên nó sẽ dãn theo nội dung
+
+    Lỗi 2: Muốn items nằm giữa cả ngang lẫn dọc trong container 100vh, nhưng item vẫn dính góc trái trên
+        Thiếu code căn chỉnh ngang dọc
+
+
+    Lỗi 3: Sidebar bị co lại khi content quá dài
+        Mặc đinh thuộc tính shrink là 1 thế thì nó sẽ bị co
