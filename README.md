@@ -6,7 +6,7 @@ Phiếu 3: Hoàn thành phần A, B, C
 Phiếu 4: Hoàn thành phần A, B, C
 Phiếu 5:
 Phiếu 6:
-Phiếu 7: Hoàn thành phần A,B
+Phiếu 7: Hoàn thành phần A, B, C
 Phiếu 8:
 Phiếu 9:
 Phiếu 10:

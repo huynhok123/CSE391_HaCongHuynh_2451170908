@@ -85,3 +85,59 @@ Câu A4 (5đ) — Truthy & Falsy
     if (0) console.log("F");     // Không in
     if (-1) console.log("G");    // In
     if (" ") console.log("H");   // In
+
+Câu C1 (10đ) — Debug JavaScript
+
+    Lỗi 1:
+
+        const gia = tinhGiaGiamGia("100000", 20)
+        "100000" là string, không phải number, js ép kiểu dễ gây bug
+        Sửa:
+        if (typeof giaBan !== "number" || typeof phanTramGiam !== "number") {
+        return "Dữ liệu không hợp lệ";
+        }
+
+    Lỗi 2:
+
+        Không check giaBan âm hoặc = 0
+
+        Sửa:
+        if (giaBan <= 0) {
+        return "Giá bán không hợp lệ";
+        }
+
+    Lỗi 3:
+
+        Sai toán tử trong if: if (giaSauGiam = 0);
+
+        Sửa: if (giaSauGiam === 0)
+
+    Lỗi 4
+
+        Logic hiển thị nhưng không return: console.log("Sản phẩm miễn phí!")
+
+        Sửa:
+        if (giaSauGiam === 0) {
+        console.log("Sản phẩm miễn phí!");
+        }
+
+    Lỗi 5
+
+        Không làm tròn tiền: var giamGia = giaBan * phanTramGiam / 100
+
+        Sửa: let giamGia = Math.round(giaBan * phanTramGiam / 100);
+
+
+    Lỗi 6:
+
+        Lỗi “ẩn” với var trong vòng lặp:
+        for (var i = 0; i < 5; i++) {
+        setTimeout(function() {
+                console.log("Item " + i)
+            }, 1000)
+        }
+
+        sửa thay var = let
+
+        Vì var có function scope không có block scope nên var không tạo biến mới mỗi vòng lặp nên sau khi chạy xong for thì i sẽ được đẩy lên giá trị cuối cùng và khi chạy hàm được set timeout sẽ lấy giá trị cuối đó chạy cho lặp n lần
+        Khi có let mỗi vòng lặp nó sẽ tạo ra biến mới không trùng lặp khi đó sau khi chạy đến hàm settimeout thì nó lấy mỗi lần lặp một i riêng không trùng
